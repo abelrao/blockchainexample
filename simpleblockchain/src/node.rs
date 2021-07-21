@@ -13,13 +13,11 @@ pub struct Node{
 #[cfg(test)]
 mod test{
     use tokio;
-    use tokio::net::TcpListener;
-    use tokio::runtime::Builder;
-    use tokio::sync::oneshot;
     use tokio_util::context::RuntimeExt;
+    use std::net::TcpListener;
+
     #[test]
-    fn main() {
-        let (tx, rx) = oneshot::channel();
+    fn test_toke() {
         let rt1 = Builder::new_multi_thread()
             .worker_threads(1)
             // no timer!
